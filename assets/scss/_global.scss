@@ -99,14 +99,14 @@ body {
 @mixin pull($offset:1) {
 	margin-right: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width*.5)/gridsystem-width($columns));
 }
-@mixin grid($total-width, $gutter-width, $row-count) {
+@mixin grid-element($total-width, $gutter-width, $row-count) {
 	$g: $gutter-width/$total-width;
 	width: ((1 - ($g * ($row-count - 1))) / $row-count) * 100%;
 	margin-right: $g * 100%;
 	margin-bottom: $g * 100%;
 	float: left;
 }
-@mixin container-grid($total-width, $gutter-width, $row-count, $element) {
+@mixin grid($total-width, $gutter-width, $row-count, $element) {
 	#{$element} {
 		$g: $gutter-width/$total-width;
 		float: left;
